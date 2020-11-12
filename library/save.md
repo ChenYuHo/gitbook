@@ -10,7 +10,7 @@ There are two ways to save a file to associate with a run.
 2. Put a file in the wandb run directory, and it will get uploaded at the end of the run.
 
 {% hint style="info" %}
-If you're [resuming](advanced/resuming.md) a run, you can recover a file by calling`wandb.restore(filename)`
+If you're [resuming](resuming.md) a run, you can recover a file by calling`wandb.restore(filename)`
 {% endhint %}
 
 If you want to sync files as they're being written, you can specify a filename or glob in `wandb.save`.
@@ -47,7 +47,7 @@ model.fit(X_train, y_train,  validation_data=(X_test, y_test),
 model.save(os.path.join(wandb.run.dir, "model.h5"))
 ```
 
-Here's a public example page. You can see on the files tab, there's the model-best.h5. That's automatically saved by default by the Keras integration, but you can save a checkpoint manually and we'll store it for you in association with your run. 
+Here's a public example page. You can see on the files tab, there's the model-best.h5. That's automatically saved by default by the Keras integration, but you can save a checkpoint manually and we'll store it for you in association with your run.
 
 [See the live example →](https://app.wandb.ai/wandb/neurips-demo/runs/206aacqo/files)
 
@@ -73,17 +73,17 @@ To change the log directory for TensorBoard events files or other files you'd li
 
 If you'd like to use the run name from within your script, you can use `wandb.run.name` and you'll get the run name— "blissful-waterfall-2" for example.
 
- you need to call save on the run before being able to access the display name:
+you need to call save on the run before being able to access the display name:
 
 ```text
 run = wandb.init(...)
 run.save()
-print(run.name) 
+print(run.name)
 ```
 
 ### Push all saved files to wandb
 
-Call  `wandb.save("*.pt")`  once at the top of your script after wandb.init, then all files that match that pattern will save immediately once they're written to wandb.run.dir.
+Call `wandb.save("*.pt")` once at the top of your script after wandb.init, then all files that match that pattern will save immediately once they're written to wandb.run.dir.
 
 ### Remove local files that have been synced to cloud storage
 

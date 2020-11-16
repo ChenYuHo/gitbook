@@ -26,7 +26,7 @@ You can pass a SHA or other unique identifier to `wandb.config.update(...)` to a
 
 ## How often are system metrics collected?
 
-By default metrics are collected every 2 seconds and averaged over a 30 second period. If you need higher resolution metrics, email us a [contact@wandb.com](mailto:contact@wandb.com).
+By default metrics are collected every 2 seconds and averaged over a 30 second period. If you need higher resolution metrics, email us at [contact@wandb.com](mailto:contact@wandb.com).
 
 ## Does this only work for Python?
 
